@@ -1,17 +1,15 @@
-import { Clock, Star } from "lucide-react"
+import { icons } from "@/utils/icons/icons"
 import { useNavigate } from "react-router"
 
 
-interface MovieCardProps {
- readonly movie: Model.Movie
-}
 
 
 
-export function MovieCard({ movie }: MovieCardProps) {
+
+export function MovieCard({ movie }: Common.ReadOnlyProps<{ movie: Model.Movie }>) {
   const navigate = useNavigate()
   return (
-    <div onClick={()=> navigate(`/movie/${movie?.id}`)} className="group cursor-pointer">
+    <div onClick={() => navigate(`/movie/${movie?.id}`)} className="group cursor-pointer">
       <div className="relative overflow-hidden rounded-lg bg-[#2e2e2e] aspect-[2/3]">
         <img
           src={movie.medium_cover_image || "/placeholder.svg?height=400&width=300"}
@@ -20,7 +18,7 @@ export function MovieCard({ movie }: MovieCardProps) {
         />
 
         {/* HD Badge */}
-        <div className="absolute top-2 left-2 bg-[#ccff00] text-[#000000] text-xs font-bold px-2 py-1 rounded">HD</div>
+        <div className="absolute top-2 left-2 bg-[var(--primary-color)] text-[#000000] text-xs font-bold px-2 py-1 rounded">HD</div>
 
         {/* Year */}
         <div className="absolute top-2 right-2 bg-[#000000]/80 text-[#ffffff] text-xs px-2 py-1 rounded">
@@ -31,11 +29,11 @@ export function MovieCard({ movie }: MovieCardProps) {
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#000000] to-transparent p-3">
           <div className="flex items-center justify-between text-xs text-[#acacac] mb-1">
             <div className="flex items-center">
-              <Clock className="w-3 h-3 mr-1" />
+              <icons.clock className="w-3 h-3 mr-1" />
               {movie.runtime} min
             </div>
             <div className="flex items-center">
-              <Star className="w-3 h-3 mr-1 fill-[#ccff00] text-[#ccff00]" />
+              <icons.star className="w-3 h-3 mr-1 fill-[var(--primary-color)] text-[var(--primary-color)]" />
               {movie.rating}
             </div>
           </div>

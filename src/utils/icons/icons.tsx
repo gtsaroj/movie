@@ -1,4 +1,26 @@
 import type { SVGProps } from "react"
+import { 
+  ChevronDown, 
+  Menu, 
+  X, 
+  Clock, 
+  Star, 
+  ChevronUp, 
+  Check,
+  Search,
+  Filter,
+  Heart,
+  Play,
+  Share2,
+  Calendar,
+  ChevronLeft,
+  ChevronRight,
+  Delete,
+  Edit,
+  AlertCircle,
+  LogOut
+} from "lucide-react"
+import { Loading } from "@/common/loader/loading";
 
 const Logo = (props: SVGProps<SVGSVGElement>) => {
     return (
@@ -49,5 +71,27 @@ const Logo = (props: SVGProps<SVGSVGElement>) => {
   };
 
 export const icons = {
-    logo: Logo
+    logo: Logo,
+    chevronDown: ChevronDown,
+    menu: Menu,
+    x: X,
+    clock: Clock,
+    star: Star,
+    chevronUp: ChevronUp,
+    check: Check,
+    search: Search,
+    filter: Filter,
+    heart: Heart,
+    play: Play,
+    share2: Share2,
+    calendar: Calendar,
+    chevronLeft: ChevronLeft,
+    chevronRight: ChevronRight,
+    edit: Edit,
+    alert: AlertCircle,
+    cancel: X,
+    warning: AlertCircle,
+    logout: LogOut,
+    delete: Delete,
+    loading: Loading,
 }

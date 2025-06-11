@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './app.tsx'
+import {Toaster} from "react-hot-toast"
+import { LoadingFallback } from './common/loader/loading.tsx'
+
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <Suspense  fallback={<LoadingFallback />}>
+      <App />
+      <Toaster/>
+    </Suspense>
   </StrictMode>,
 )

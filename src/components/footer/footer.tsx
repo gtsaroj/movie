@@ -13,23 +13,23 @@ export function Footer() {
           </div>
   
           <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-[#acacac]">
-            <a href="#" className="hover:text-[#ccff00] transition-colors">
+            <a href="#" className="hover:text-[var(--primary-color)] transition-colors">
               About us
             </a>
             <span>|</span>
-            <a href="#" className="hover:text-[#ccff00] transition-colors">
+            <a href="#" className="hover:text-[var(--primary-color)] transition-colors">
               Vlog
             </a>
             <span>|</span>
-            <a href="#" className="hover:text-[#ccff00] transition-colors">
+            <a href="#" className="hover:text-[var(--primary-color)] transition-colors">
               Contact
             </a>
             <span>|</span>
-            <a href="#" className="hover:text-[#ccff00] transition-colors">
+            <a href="#" className="hover:text-[var(--primary-color)] transition-colors">
               Report broken links
             </a>
             <span>|</span>
-            <a href="#" className="hover:text-[#ccff00] transition-colors">
+            <a href="#" className="hover:text-[var(--primary-color)] transition-colors">
               Disclaimer
             </a>
           </div>

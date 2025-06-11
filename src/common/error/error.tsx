@@ -10,7 +10,7 @@ function ErrorFallback({ error, resetErrorBoundary }: { error: Error; resetError
         <p className="text-[#acacac] mb-6">{error.message}</p>
         <Button 
           onClick={resetErrorBoundary}
-          className="bg-[#ccff00] text-[#000000] hover:bg-[#b3e600]"
+          className="bg-[var(--primary-color)] text-[#000000] hover:bg-[#b3e600]"
         >
           Try again
         </Button>

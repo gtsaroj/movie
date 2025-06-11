@@ -4,14 +4,9 @@ import axios from "axios";
 
 
 
-
-
-
-
 export async function fetchMovies(
     params: Api.Params,
-): Promise<Api.Response<{ movies: Model.Movie[], limit: number, page_number: number, movie_count:number }>> {
- console.log(params)
+): Promise<Api.Response<{ movies: Model.Movie[], limit: number, page_number: number, movie_count: number }>> {
     try {
         const searchParams = new URLSearchParams()
 
@@ -37,7 +32,7 @@ export async function fetchMovies(
 
 }
 
-export async function fetchMovieDetails(movieId: string): Promise<Api.Response<{movie:Model.Movie}>> {
+export async function fetchMovieDetails(movieId: string): Promise<Api.Response<{ movie: Model.Movie }>> {
     try {
         const response = await makeRequest({
             method: "get",
@@ -54,7 +49,7 @@ export async function fetchMovieDetails(movieId: string): Promise<Api.Response<{
     }
 }
 
-export async function fetchMovieSuggestions(movieId: string): Promise<Api.Response<{movies:Model.Movie[]}>> {
+export async function fetchMovieSuggestions(movieId: string): Promise<Api.Response<{ movies: Model.Movie[] }>> {
     try {
         const response = await makeRequest({
             method: "get",

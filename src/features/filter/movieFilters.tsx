@@ -1,7 +1,5 @@
-"use client"
-
 import { useState, useCallback } from "react"
-import { Search, Filter, X } from "lucide-react"
+import { icons } from "@/utils/icons/icons"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -119,32 +117,32 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
         {/* Search Bar */}
         <div className="flex items-center gap-4 py-4">
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#acacac] w-5 h-5" />
+            <icons.search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#acacac] w-5 h-5" />
             <Input
               placeholder="Search movies..."
               value={filters.query_term}
               onChange={(e) => handleFilterChange("query_term", e.target.value)}
-              className="pl-10 bg-[#2e2e2e] border-[#454545] text-[#ffffff] placeholder-[#acacac] focus:border-[#ccff00]"
+              className="pl-10 bg-[#2e2e2e] border-[#454545] text-[#ffffff] placeholder-[#acacac] focus:border-[var(--primary-color)]"
             />
           </div>
           <Button
             onClick={onToggle}
             variant="outline"
-            className="border-[#ccff00] text-black cursor-pointer hover:bg-[#ccff00] hover:text-[#000000]"
+            className="border-[var(--border-color)]  text-black cursor-pointer hover:bg-[var(--primary-color)] hover:text-[#000000]"
           >
-            <Filter className="w-4 h-4 mr-2" />
+            <icons.filter className="w-4 h-4 mr-2" />
             Filters
           </Button>
         </div>
 
         {/* Filters Panel */}
-        {isOpen && (
+        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="pb-6">
-            <div className="bg-[#2e2e2e] rounded-lg p-6">
+            <div className="bg-[#2e2e2e] rounded-lg p-6 transform transition-transform duration-300 ease-in-out">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-[#ffffff] text-lg font-semibold">Advanced Filters</h3>
                 <Button onClick={onToggle}  size="icon" className="text-[#acacac] hover:text-[#ffffff]">
-                  <X className="w-5 h-5" />
+                  <icons.x className="w-5 h-5" />
                 </Button>
               </div>
 
@@ -161,7 +159,7 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
                         <SelectItem
                           key={quality}
                           value={quality}
-                          className="text-[#ffffff] focus:bg-[#ccff00] focus:text-[#000000]"
+                          className="text-[#ffffff] focus:bg-[var(--primary-color)] focus:text-[#000000]"
                         >
                           {quality}
                         </SelectItem>
@@ -182,7 +180,7 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
                         <SelectItem
                           key={genre}
                           value={genre}
-                          className="text-[#ffffff] focus:bg-[#ccff00] focus:text-[#000000]"
+                          className="text-[#ffffff] focus:bg-[var(--primary-color)] focus:text-[#000000]"
                         >
                           {genre}
                         </SelectItem>
@@ -206,7 +204,7 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
                         <SelectItem
                           key={rating.value}
                           value={rating.value.toString()}
-                          className="text-[#ffffff] focus:bg-[#ccff00] focus:text-[#000000]"
+                          className="text-[#ffffff] focus:bg-[var(--primary-color)] focus:text-[#000000]"
                         >
                           {rating.label}
                         </SelectItem>
@@ -227,7 +225,7 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
                         <SelectItem
                           key={year}
                           value={year}
-                          className="text-[#ffffff] focus:bg-[#ccff00] focus:text-[#000000]"
+                          className="text-[#ffffff] focus:bg-[var(--primary-color)] focus:text-[#000000]"
                         >
                           {year}
                         </SelectItem>
@@ -248,7 +246,7 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
                         <SelectItem
                           key={language}
                           value={language}
-                          className="text-[#ffffff] focus:bg-[#ccff00] focus:text-[#000000]"
+                          className="text-[#ffffff] focus:bg-[var(--primary-color)] focus:text-[#000000]"
                         >
                           {language}
                         </SelectItem>
@@ -269,7 +267,7 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
                         <SelectItem
                           key={option.value}
                           value={option.value}
-                          className="text-[#ffffff] focus:bg-[#ccff00] focus:text-[#000000]"
+                          className="text-[#ffffff] focus:bg-[var(--primary-color)] focus:text-[#000000]"
                         >
                           {option.label}
                         </SelectItem>
@@ -290,7 +288,7 @@ export function SearchFilters({ onSearch, isOpen, onToggle }: SearchFiltersProps
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   )

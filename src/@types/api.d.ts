@@ -15,5 +15,6 @@ declare namespace Api {
         genre?: string
         sort_by?: string
         order_by?: string
+        year?: string
     }
 }

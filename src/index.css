@@ -12,7 +12,9 @@
   font-weight: 400;
 
 
-  --primary-color:#5DA93C;
+  --primary-color:#C7F900;
+
+  --border-color:#1D1D1D;
 
   /* Font variables for different purposes */
   --font-heading: 'Bebas Neue', sans-serif;
@@ -163,4 +165,44 @@ button{
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+  opacity: 0.8;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) transparent;
 }

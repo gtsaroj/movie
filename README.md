@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+# Movie Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application built with React, TypeScript, and Vite for browsing and discovering movies.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern UI with responsive design
+- Type-safe development with TypeScript
+- Fast development with Vite
+- Clean and maintainable code structure
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+src/
+├── assets/        # Static assets like images and fonts
+├── components/    # Reusable UI components
+├── common/        # Shared constants and utilities used across features
+├── config/        # Application configuration
+├── features/      # Feature-specific components and logic
+├── helpers/       # Helper functions and utilities
+├── hooks/         # Custom React hooks
+├── layouts/       # Layout components
+├── lib/          # Third-party library configurations
+├── pages/        # Page components
+├── routes/       # Route definitions
+├── services/     # API services and data fetching
+└── utils/        # Utility functions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Directory Details
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **common/**: Contains shared resources used across multiple features:
+  - Constants and configuration values
+  - Common TypeScript interfaces and types
+  - Shared utility functions
+  - Common hooks and components
+  - Shared styles and themes
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Building for Production
+
+To create a production build:
+
+```bash
+npm run build
 ```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## Technologies Used
+
+- React
+- TypeScript
+- Vite
+- ESLint
+- Netlify (for deployment)
+
+## License
+
+[Your chosen license]
+
+# API Configuration
+VITE_APP_API_URL=https://yts.mx/api
+
+# Application Settings
+VITE_APP_NAME=Movie App Test
+VITE_APP_VERSION=1.0.0
+
+

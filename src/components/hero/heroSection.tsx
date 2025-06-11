@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Play } from "lucide-react"
+import { icons } from "@/utils/icons/icons"
 import HeroImg from "@/assets/landingBg.png"
 import { fetchMovies } from "@/services"
 import { ApiError } from "@/helpers"
@@ -13,18 +13,18 @@ export function Hero() {
 
   const mostLikedMovies = async (): Promise<Model.Movie[]> => {
     try {
-        const response = await fetchMovies({
-            limit: 20,
-           sort_by:"like_count",
-           order_by:"desc"
-        })
+      const response = await fetchMovies({
+        limit: 20,
+        sort_by: "like_count",
+        order_by: "desc"
+      })
 
-        return response?.data?.movies;
+      return response?.data?.movies;
     } catch (error) {
-        if (error instanceof ApiError) {
-            throw new Error(error?.message)
-        }
-        throw new ApiError(400, "Error while showing movies")
+      if (error instanceof ApiError) {
+        throw new Error(error?.message)
+      }
+      throw new ApiError(400, "Error while showing movies")
     }
   }
 
@@ -40,7 +40,7 @@ export function Hero() {
     if (movies.length === 0) return
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === movies.length - 1 ? 0 : prevIndex + 1
       )
     }, 3000)
@@ -63,9 +63,9 @@ export function Hero() {
 
       <div className="relative container mx-auto px-4 h-full flex items-center border-slate-400">
         <div className="max-w-2xl">
-          <div className="text-[#ccff00] text-sm md:text-base font-medium mb-2">Filmagnet</div>
+          <div className="text-[var(--primary-color)] text-sm md:text-base font-medium mb-2">Filmagnet</div>
           <h1 className="text-[#ffffff] text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-            Unlimited <span className="text-[#ccff00]">Entertainment</span>,<br />
+            Unlimited <span className="text-[var(--primary-color)]">Entertainment</span>,<br />
             Movies, TVs shows, & More.
           </h1>
 
@@ -76,11 +76,11 @@ export function Hero() {
             <span className="text-[#acacac]">📅 {currentMovie?.year || "2023"}</span>
           </div>
 
-          <Button 
-            className="bg-[#ccff00] text-[#000000] hover:bg-[#b0dc00] font-semibold px-8 py-3 rounded-full"
+          <Button
+            className="bg-[var(--primary-color)] text-[#000000] hover:bg-[#b0dc00] font-semibold px-8 py-3 rounded-full"
             onClick={() => currentMovie?.id && navigate(`/movie/${currentMovie.id}`)}
           >
-            <Play className="w-5 h-5 mr-2 fill-current" />
+            <icons.play className="w-5 h-5 mr-2 fill-current" />
             PLAY NOW
           </Button>
         </div>
