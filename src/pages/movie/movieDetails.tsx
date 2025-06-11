@@ -43,7 +43,7 @@ export  function MovieDetailPage() {
   useEffect(() => {
     const checkFavoriteStatus = async () => {
       if (movie?.movie?.id) {
-        const status = await indexedDBService.isFavorite(movie.movie.id);
+        const status = await indexedDBService.isFavorite(movie?.movie?.id);
         setIsFavorite(status);
       }
     };
@@ -55,9 +55,9 @@ export  function MovieDetailPage() {
 
     try {
       if (isFavorite) {
-        await indexedDBService.removeFromFavorites(movie.movie.id);
+        await indexedDBService.removeFromFavorites(movie?.movie?.id);
       } else {
-        await indexedDBService.addToFavorites(movie.movie);
+        await indexedDBService.addToFavorites(movie?.movie);
       }
       setIsFavorite(!isFavorite);
     } catch (error) {

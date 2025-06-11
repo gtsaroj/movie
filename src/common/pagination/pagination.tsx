@@ -13,7 +13,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Common.Pag
                     onClick={() => onPageChange(Math.max(1, currentPage - 1))}
                     className="text-[#acacac] border border-[#1D1D1D] cursor-pointer hover:text-[#ffffff] hover:bg-[#5fa93c] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Previous
+                &laquo;  Previous 
                 </Button>
             )}
             {Array.from({ length: Math.min(8, totalPages) }, (_, i) => i + 1).map((page) => (
